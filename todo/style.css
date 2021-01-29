@@ -1,0 +1,7 @@
+#app li {
+    list-style: none;
+}
+  
+#app li > span.done {
+    text-decoration: line-through;
+}
