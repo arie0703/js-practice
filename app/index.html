@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+    <title>Vue.practice</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <div id="todo">
+        <form v-on:submit.prevent>
+            <input type="text" v-model="newItem">
+            <button v-on:click="addItem">
+            Add
+            </button>
+
+            <!-- v-on:clickで変数変化させることもできる　-->
+            <button v-on:click="counter ++">
+                Plus
+            </button>
+        </form>
+        <li v-for="(todo, index) in desc_todos" v-cloak>
+            <input type="checkbox" v-model="todo.isDone">
+            <span v-bind:class="{done: todo.isDone}">{{ todo.item }}</span>
+            <button v-on:click="deleteItem(index)">
+            Delete
+            </button>
+        </li>
+
+        <span v-cloak>{{ $data.counter }}</span>
+    </div>
+
+    <div id="bitcoin">
+        <!-- hasErrorがtrueならエラー表示 -->
+        <section v-if="hasError" v-cloak>
+            <p>Error!</p>
+        </section>
+
+        <section v-else>
+            <ul v-cloak>
+                <li v-for="(rate, currency) in bpi">
+                    {{ currency }}: {{ rate.rate_float | currencyDecimal }}
+                </li>
+            </ul>
+        </section>
+        
+    </div>
+
+
+    <div id="tab-menu">
+        <div class="menu-container">
+            <div class="tabs">
+              <!-- valueで指定した値をisActiveに代入。 -->
+              <input type="radio" id="tab1" name="tab" value="0" v-model="isActive">
+              <label for="tab1">Tab 1</label>
+              <input type="radio" id="tab2" name="tab" value="1" v-model="isActive">
+              <label for="tab2">Tab 2</label>
+              <input type="radio" id="tab3" name="tab" value="2" v-model="isActive">
+              <label for="tab3">Tab 3</label>
+            </div>
+      
+            <ul class="contents">
+              <li v-for="(message, index) in messages" v-if="isActive == index">{{ message }}</li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/axios.js"></script>
+    <script src="js/tab-menu.js"></script>
+
+</body>
+</html>
+
+  
+  

@@ -1,0 +1,61 @@
+#todo, #bitcoin, #tab-menu {
+    margin-bottom: 20px;
+}
+
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+  
+#todo li > span.done {
+    text-decoration: line-through;
+}
+
+/* v-cloakを使ってチラつきを防止する */
+[v-cloak] {
+    display: none;
+}
+
+
+/* タブメニューのCSS */
+.tabs {
+overflow: hidden;
+}
+
+/* 選択されていないタブ */
+.tabs label {
+    float: left;
+    padding: 10px 20px;
+    background-color: #efefef;
+    cursor: pointer;
+    width: 50px;
+}
+
+/* 選択されているタブ */
+.tabs :checked + label {
+    background-color: #00b7ce;
+    border-color: #00b7ce;
+    color: #fff;
+    cursor: auto;
+}
+
+.contents{
+    overflow: hidden;
+}
+
+.contents li {
+    width: 230px;
+    padding: 20px;
+    background-color: #eeeeee;
+    
+}
+
+/* ラジオボタンを隠す */
+.menu-container input{
+    display: none;
+}
