@@ -1,5 +1,5 @@
-var app = new Vue ({
-	el: '#app',
+var todo = new Vue ({
+	el: '#todo',
   data: {
   	newItem: '',
     todos: [],
