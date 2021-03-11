@@ -6,3 +6,6 @@
     <li>markdown - マークダウンエディタアプリ</li>
     <li>common - jQueryなどのライブラリ保管ディレクトリ</li>
 </ul>
+
+Vue.jsの練習・アウトプット用リポジトリ
+
