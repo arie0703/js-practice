@@ -18,12 +18,14 @@ $(function() {
         var html = marked(src);
 
         $('#result').html(html);
-
+        //highlight
         $('pre code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
     });
 
+
+    //goボタン押した時の処理
     let button = document.getElementById('add_button');
     button.onclick = function addBackquotes(){
         let editor = document.getElementById('editor');
@@ -31,7 +33,11 @@ $(function() {
         let newLine = "\n".repeat(3);
 
         editor.value = "```" + language.value + newLine + "```";
-
+        //resultにも反映
+        $('#result').html(marked(editor.value));
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
         language.value = "";
 
     }
